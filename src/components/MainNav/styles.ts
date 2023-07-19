@@ -1,5 +1,7 @@
 import tw from 'tailwind-styled-components'
 
+import * as ListItemContainer from '@/components/List/components/ListItem/styles'
+
 export const Nav = tw.nav`
   hidden
   items-center
@@ -64,7 +66,7 @@ export const ListMobile = tw.ul`
   px-4
 `
 
-export const ListItemMobile = tw.li`
+export const ListItemMobile = tw(ListItemContainer.Container)`
   border-b
   border-gray-600
   py-3
