@@ -1,22 +1,23 @@
-import { siteConfig } from '@/config'
+import { notFound } from 'next/navigation'
+
 import { paginationPages } from '@/functions'
 import { PostService } from '@/services'
 
 import { Pagination } from '@/components/Pagination'
 import { PostsList } from '@/components/PostsLists'
-import { Profile } from '@/components/Profile'
 
-export default function Home() {
-  const { posts, currentPage, numbPages } = PostService.getAll()
+export default function Page({ params }: { params: { page: string } }) {
+  const currentPage = +params.page
 
+  const { posts, numbPages } = PostService.getAll({ currentPage })
   const { prevPage, nextPage } = paginationPages(currentPage)
 
-  return (
-    <main>
-      <div className="my-10">
-        <Profile items={siteConfig} />
-      </div>
+  if (!posts.length) {
+    notFound()
+  }
 
+  return (
+    <>
       <PostsList posts={posts} />
 
       <Pagination
@@ -25,6 +26,6 @@ export default function Home() {
         prevPage={prevPage}
         nextPage={nextPage}
       />
-    </main>
+    </>
   )
 }

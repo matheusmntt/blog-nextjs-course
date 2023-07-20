@@ -1,0 +1,1 @@
+export { paginationPages } from './paginationPages'

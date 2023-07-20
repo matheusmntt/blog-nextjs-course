@@ -1,26 +1,22 @@
 import { allPosts } from 'contentlayer/generated'
 
-import { formatDate, formatPosts, slugify } from '@/functions'
+import { formatPosts, paginationPosts } from '@/functions'
+
+type GetPostAllParams = {
+  limit?: number
+  currentPage?: number
+}
 
 export const PostService = {
-  getAll: () => {
-    const formattedPosts = allPosts.map((post) => {
-      return {
-        slug: slugify(post.slug),
-        body: post.body,
-        readingTime: Math.ceil(post.readingTime.minutes),
-        frontmatter: {
-          title: post.title,
-          description: post.description,
-          date: formatDate(post.date),
-          tags: post.tags,
-          image: post.image,
-        },
-      }
-    })
+  getAll: ({ limit = 4, currentPage = 1 }: GetPostAllParams = {}) => {
+    const formattedPosts = formatPosts(allPosts)
+    const numbPages = Math.ceil(formattedPosts.length / limit)
+    const paginatePosts = paginationPosts(formattedPosts, limit, currentPage)
 
     return {
-      posts: formattedPosts,
+      posts: paginatePosts,
+      numbPages,
+      currentPage,
     }
   },
 
