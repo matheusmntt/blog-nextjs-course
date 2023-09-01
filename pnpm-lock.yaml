@@ -49,7 +49,7 @@ dependencies:
     version: 6.1.1
   rehype-pretty-code:
     specifier: ^0.9.6
-    version: 0.9.6(shiki@0.14.2)
+    version: 0.9.6(shiki@0.14.4)
   rehype-slug:
     specifier: ^5.1.0
     version: 5.1.0
@@ -57,8 +57,8 @@ dependencies:
     specifier: ^3.0.1
     version: 3.0.1
   shiki:
-    specifier: ^0.14.2
-    version: 0.14.2
+    specifier: ^0.14.4
+    version: 0.14.4
   tailwindcss:
     specifier: 3.3.2
     version: 3.3.2
@@ -6653,7 +6653,7 @@ packages:
       unist-util-visit: 4.1.2
     dev: false
 
-  /rehype-pretty-code@0.9.6(shiki@0.14.2):
+  /rehype-pretty-code@0.9.6(shiki@0.14.4):
     resolution: {integrity: sha512-l94QKT6w00AIJp1FsbVnbKmcEckKdYkJQfstgiSI4GTt/hSdDrnQRz6rP8r01x1rXNFC2exMG4WY0X7fOpVQGw==}
     engines: {node: ^12.16.0 || >=13.2.0}
     peerDependencies:
@@ -6661,7 +6661,7 @@ packages:
     dependencies:
       hash-obj: 4.0.0
       parse-numeric-range: 1.3.0
-      shiki: 0.14.2
+      shiki: 0.14.4
     dev: false
 
   /rehype-slug@5.1.0:
@@ -6890,8 +6890,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  /shiki@0.14.2:
-    resolution: {integrity: sha512-ltSZlSLOuSY0M0Y75KA+ieRaZ0Trf5Wl3gutE7jzLuIcWxLp5i/uEnLoQWNvgKXQ5OMpGkJnVMRLAuzjc0LJ2A==}
+  /shiki@0.14.4:
+    resolution: {integrity: sha512-IXCRip2IQzKwxArNNq1S+On4KPML3Yyn8Zzs/xRgcgOWIr8ntIK3IKzjFPfjy/7kt9ZMjc+FItfqHRBg8b6tNQ==}
     dependencies:
       ansi-sequence-parser: 1.1.0
       jsonc-parser: 3.2.0
